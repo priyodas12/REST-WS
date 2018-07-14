@@ -20,8 +20,13 @@ public class TweetResource {
 	@Produces(MediaType.APPLICATION_XML)
 	public List<Tweet> getTweets(){
 		
-		return ts.getAllTweetInformation();
-		
+		return ts.getAllTweetInformation();	
+	}
+	
+	@POST
+	@Produces(MediaType.TEXT_PLAIN)
+	public String postTweet() {
+		return "tweet posted on time: "+new Date();
 	}
 	
 	@Path("/{messageId}")
